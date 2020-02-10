@@ -14,12 +14,10 @@ void ReadDcAgesModelQsT( CStream *s, vector<CLASS> *cache, const OBJECT *object 
     }
 
     n=s->readdword();
-    if(n!=0x20)
-        __asm int 3
+    assert(n==0x20);
     s->seek(n);
     n=s->readdword();
-    if(n!=0x20)
-        __asm int 3
+    assert(n==0x20);
     s->seek(n);
 
     word cnt=s->readword();

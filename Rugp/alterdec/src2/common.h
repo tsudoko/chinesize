@@ -17,6 +17,7 @@
 #include	"imagewriter.h"
 #include	<string>
 #include	<vector>
+#include	<cassert>
 
 
 

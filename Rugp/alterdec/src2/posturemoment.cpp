@@ -9,8 +9,7 @@ void ReadPostureMoment( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 	int n=s->readbyte();
 	s->readbyte();
 
-	if(n!=0xa)
-		__asm{int 3}
+	assert(n==0xa);
 
 	//if(n==9)
 	//	ReadClassList( s, cache, object );
@@ -37,8 +36,7 @@ void ReadPostureMoment( CStream *s, vector<CLASS> *cache, const OBJECT *object )
     int n=s->readbyte();
     s->readbyte();
 
-    if(n!=0x5)
-        __asm{int 3}
+    assert(n==0x5);
 
     //if(n==9)
     //	ReadClassList( s, cache, object );

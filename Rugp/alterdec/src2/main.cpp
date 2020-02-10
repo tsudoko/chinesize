@@ -9,8 +9,9 @@
 #include	"common.h"
 #include	"fade.h"
 #include	<time.h>
-#include	<conio.h>
-#include <hash_map>
+#include	<cstring>
+#include <unordered_map>
+#define hash_map unordered_map
 
 
 void	ReadRelicUnitedGameProject( CStream *s, vector<CLASS> *cache, const OBJECT *object );
@@ -92,7 +93,6 @@ int main( int argc, char **argv )
 		fclose(gfp);
 		printf( "%s\n", str );
 	}
-	getch();
 }
 
 

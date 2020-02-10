@@ -1,7 +1,8 @@
 
 #include	"common.h"
 #include	"textwriter.h"
-#include <hash_map>
+#include <unordered_map>
+#define hash_map unordered_map
 
 dword CalcHash(byte* s,dword len);
 

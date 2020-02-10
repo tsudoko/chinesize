@@ -1,7 +1,8 @@
 //This file is auto-generated.
 
 #include "common.h"
-#include <hash_map>
+#include <unordered_map>
+#define hash_map unordered_map
 
 typedef void (*OMFunction)(CStream *s, vector<CLASS> *cache, const OBJECT *object);
 
