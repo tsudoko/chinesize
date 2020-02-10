@@ -9,7 +9,7 @@ void ReadLayoutTextImg(CStream *s, vector<CLASS> *cache, const OBJECT *object )
     s->readdword();
     s->readdword();
 
-    //×ÖÌå
+    //å­—ä½“
     s->readstring();
     s->readstring();
 

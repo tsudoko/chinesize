@@ -44,7 +44,7 @@ void CImageWriter::set( int x, int y, byte r, byte g, byte b, byte a )
 
 /*
  *	write
- *		offset¤Ï¥Õ¥¡¥¤¥ëÃû¤ËÊ¹ÓÃ
+ *		offsetã¯ãƒ•ã‚¡ã‚¤ãƒ«åã«ä½¿ç”¨
  */
 void CImageWriter::write( dword offset )
 {
@@ -54,7 +54,7 @@ void CImageWriter::write( dword offset )
 
 	//FILE *f = fopen( filename, "wb" );
 	//if ( f == NULL )
-	//	throw "•ø¤­Şz¤ßÏÈ¥Õ¥¡¥¤¥ë¤òé_¤±¤Ş¤»¤ó¤Ç¤·¤¿¡£";
+	//	throw "æ›¸ãè¾¼ã¿å…ˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚";
 
 	//png_structp	png_ptr = png_create_write_struct( PNG_LIBPNG_VER_STRING, NULL, NULL, NULL );
 	//png_infop info_ptr = png_create_info_struct( png_ptr );

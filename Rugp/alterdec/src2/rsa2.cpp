@@ -22,7 +22,7 @@ void ReadOM( CStream *s, vector<CLASS> *cache, const OBJECT *object, string om, 
 		dword offset=s->getreadbyte();
 		int n=s->readbyte();
 		if(n>=256)
-			throw "Ñ¡ÔñÖ§Ì«³¤£¡";
+			throw "é€‰æ‹©æ”¯å¤ªé•¿ï¼";
 		s->read(str,n);
 		str[n]='\0';
 		if(n>1)
@@ -41,7 +41,7 @@ void ReadOM( CStream *s, vector<CLASS> *cache, const OBJECT *object, string om, 
 		dword offset=s->getreadbyte();
 		int n=s->readbyte();
 		if(n>=256)
-			throw "±êÇ©Ì«³¤£¡";
+			throw "æ ‡ç­¾å¤ªé•¿ï¼";
 		s->read(str,n);
 		str[n]='\0';
 		if(n>=1)

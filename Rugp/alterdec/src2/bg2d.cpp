@@ -47,5 +47,5 @@ void ReadBg2d( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 
 	s->readdword();
 
-	//Î´Íê
+	//æœªå®Œ
 }

@@ -30,7 +30,7 @@ void ReadR6Ti( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 	s->readdword();
 	s->readdword();
 
-    //ֱ�Ӷ�ȡblock
+    //直接读取block
 	s->seek((size+1)/2*2+2);
 	return;
 

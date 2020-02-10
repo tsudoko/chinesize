@@ -8,7 +8,7 @@ static string	DecodeClassName( byte *buf, int len );
 
 /*
  *	ReadCrypted
- *		·µ¤ê‚¤Ïfree¤Çé_·Å¤¹¤ë¤³¤È
+ *		è¿”ã‚Šå€¤ã¯freeã§é–‹æ”¾ã™ã‚‹ã“ã¨
  */
 byte *ReadCrypted( CStream *s, dword key, dword* pSize)
 {
@@ -18,7 +18,7 @@ byte *ReadCrypted( CStream *s, dword key, dword* pSize)
 	byte *buf = (byte *)malloc( size2 );
 
 	if ( ! buf )
-		throw "¥á¥â¥ê¤Î´_±£¤ËÊ§”¡¤·¤Ş¤·¤¿¡£";
+		throw "ãƒ¡ãƒ¢ãƒªã®ç¢ºä¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚";
 
 	dword k = key;
 	word c = 0;
@@ -36,7 +36,7 @@ byte *ReadCrypted( CStream *s, dword key, dword* pSize)
 			word check = s->readword();
 
 			if ( c != check )
-				throw "¥Ñ¥ê¥Æ¥£¤¬Ò»ÖÂ¤·¤Ş¤»¤ó¤Ç¤·¤¿¡£";
+				throw "ãƒ‘ãƒªãƒ†ã‚£ãŒä¸€è‡´ã—ã¾ã›ã‚“ã§ã—ãŸã€‚";
 			c = 0;
 		}
 	}
@@ -107,7 +107,7 @@ bool ReadClass( CStream *s, vector<CLASS> *cache, CLASS *cls )
 	dword w = s->readword();
 
 	if(w==0x7fff)
-		throw "Class Index 32Î»";
+		throw "Class Index 32ä½";
 	if ( w == 0xffff )
 	{
 		cls->schema = s->readword();
@@ -122,7 +122,7 @@ bool ReadClass( CStream *s, vector<CLASS> *cache, CLASS *cls )
 		int n = w & 0x7fff;
 
 		if ( n >= (int)cache->size() )
-			throw "Class index ÒıÓÃ³¬³ö";
+			throw "Class index å¼•ç”¨è¶…å‡º";
 
 		*cls = (*cache)[n];
 
@@ -159,7 +159,7 @@ bool ReadRawClass( CStream *s, vector<CLASS> *cache, CLASS *cls )
 		int n = w & 0x7fff;
 
 		if ( n >= (int)cache->size() )
-			throw "¥¯¥é¥¹¥­¥ã¥Ã¥·¥å¤Î¹ ‡ìÍâ¤¬²ÎÕÕ¤µ¤ì¤Ş¤·¤¿¡£";
+			throw "ã‚¯ãƒ©ã‚¹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®ç¯„å›²å¤–ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚";
 
 		*cls = (*cache)[n];
 
@@ -202,7 +202,7 @@ bool ReadArchiveClass( CStream *s, vector<CLASS> *cache, CLASS *cls )
 		int n = w & 0x7fff;
 
 		if ( n >= (int)cache->size() )
-			throw "¥¯¥é¥¹¥­¥ã¥Ã¥·¥å¤Î¹ ‡ìÍâ¤¬²ÎÕÕ¤µ¤ì¤Ş¤·¤¿¡£";
+			throw "ã‚¯ãƒ©ã‚¹ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®ç¯„å›²å¤–ãŒå‚ç…§ã•ã‚Œã¾ã—ãŸã€‚";
 
 		*cls = (*cache)[n];
 
@@ -349,14 +349,14 @@ string DecodeClassName( byte *buf, int len )
 		}
 	}
 
-	return string( name.c_str() );	//	Ä©Î²¤Î'\0'¤ò³ı¤¯
+	return string( name.c_str() );	//	æœ«å°¾ã®'\0'ã‚’é™¤ã
 }
 
 
 
 /*
  *	DecodeOffset
- *		ŒgëH¤Î¥ª¥Õ¥»¥Ã¥È¤Î°ë·Ö
+ *		å®Ÿéš›ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã®åŠåˆ†
  */
 dword DecodeOffset( dword offset )
 {

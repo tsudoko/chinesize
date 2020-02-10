@@ -39,7 +39,7 @@ struct OBJECT : CLASS
 class CObjectList
 {
 	vector<OBJECT>	object;
-	set<dword>		listed;		//	¥ê¥¹¥È¤µ¤ì¤¿¥ª¥Õ¥»¥Ã¥È
+	set<dword>		listed;		//	ãƒªã‚¹ãƒˆã•ã‚ŒãŸã‚ªãƒ•ã‚»ãƒƒãƒˆ
 
 public:
 	void	Add( string name, int schema, dword offset, dword size );

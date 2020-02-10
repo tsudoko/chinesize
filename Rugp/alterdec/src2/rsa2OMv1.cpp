@@ -28,7 +28,7 @@ static void Sub1( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 			s->readword();			//	?
 			int n = s->readword();
 			if(n>=64)
-				throw "²ÎÊýÃûÌ«³¤! in rs2OM";
+				throw "å‚æ•°åå¤ªé•¿! in rs2OM";
 			s->read(paraName,n);
 			paraName[n]='\0';
 			Log(paraName);

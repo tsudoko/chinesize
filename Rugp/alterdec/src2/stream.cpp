@@ -116,7 +116,7 @@ string CStream::readstring()
 {
     char buf[257];
 
-	int len = readbyte();	//	2byteÒÔÉÏ¤ÎˆöºÏ¤¢¤ê
+	int len = readbyte();	//	2byteä»¥ä¸Šã®å ´åˆã‚ã‚Š
     if(len==0xff)
     {
         len=readword();
@@ -157,7 +157,7 @@ CFileStream::CFileStream( FILE *file )
 void CFileStream::read( void *buf, int len )
 {
 	if ( fread( buf, 1, len, f ) != len )
-		throw "¥Õ¥¡¥¤¥ë¤ÎÕi¤ßŞz¤ß¤ËÊ§”¡¤·¤Ş¤·¤¿¡£";
+		throw "ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚";
 	redbyte += len;
 }
 
@@ -167,7 +167,7 @@ void CFileStream::read( void *buf, int len )
 void CFileStream::seek( int n )
 {
 	if ( fseek( f, n, SEEK_CUR ) != 0 )
-		throw "¥Õ¥¡¥¤¥ë¤Î¥·©`¥¯¤ËÊ§”¡¤·¤Ş¤·¤¿¡£";
+		throw "ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚·ãƒ¼ã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸã€‚";
 	redbyte += n;
 };
 

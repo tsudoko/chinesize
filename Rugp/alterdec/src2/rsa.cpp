@@ -80,7 +80,7 @@ void ReadRsa( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 		else if ( cls.name == "CVmMsg" )  ReadVmMsg( &m, &mcache, object, &writer );
 		else if ( cls.name == "CVmImage" )  ReadVmImage( &m, &mcache, object );
 		else
-			throw "Î´Œê¤ÎVM¥¯¥é¥¹¤¬ÒŠ¤Ä¤«¤ê¤Ş¤·¤¿¡£";
+			throw "æœªå¯¾å¿œã®VMã‚¯ãƒ©ã‚¹ãŒè¦‹ã¤ã‹ã‚Šã¾ã—ãŸã€‚";
 	}
 
 	free( buf );
@@ -177,7 +177,7 @@ void ReadVmGenericMsg( CStream *s, vector<CLASS> *cache, const OBJECT *object, C
 			s->seek( n );
 		}
 		else
-			throw "VmGenericMsg´íÎó";
+			throw "VmGenericMsgé”™è¯¯";
 
 		dword w2=s->readword();
 		if(w2==0x7fff)
@@ -188,7 +188,7 @@ void ReadVmGenericMsg( CStream *s, vector<CLASS> *cache, const OBJECT *object, C
             char paramname[256];
             word len = s->readword();
             if ( len >= 256 )
-                throw "¥Ñ¥é¥á¥¿Ãû¤¬éL¤¹¤®¤Ş¤¹¡£";
+                throw "ãƒ‘ãƒ©ãƒ¡ã‚¿åãŒé•·ã™ãã¾ã™ã€‚";
             s->read( paramname, len );
             paramname[len] = '\0';
             printf( "%s\n", paramname );
@@ -236,7 +236,7 @@ void ReadVmCall( CStream *s, vector<CLASS> *cache, const OBJECT *object )
 				s->readword();			//	?
 				int n = s->readword();
 				if(n>=64)
-					throw "²ÎÊıÃûÌ«³¤! in REadVmCall";
+					throw "å‚æ•°åå¤ªé•¿! in REadVmCall";
 				s->read(paraName,n);
 				paraName[n]='\0';
 				Log(paraName);
@@ -371,7 +371,7 @@ void ReadVmMsg( CStream *s, vector<CLASS> *cache, const OBJECT *object, CTextWri
 	if(n==0xff)
 		n=s->readword();
 	if(n>=1024)
-		throw "ÎÄ±¾³¬³¤£¡";
+		throw "æ–‡æœ¬è¶…é•¿ï¼";
 
 	s->read(buf,n);
 	

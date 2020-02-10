@@ -45,7 +45,7 @@ void CTextWriter::addLine(const char* str,dword off,dword oriHash,dword hash2)
 
 /*
  *	write
- *		offset¤Ï¥Õ¥¡¥¤¥ëÃû¤ËÊ¹ÓÃ
+ *		offsetã¯ãƒ•ã‚¡ã‚¤ãƒ«åã«ä½¿ç”¨
  */
 void CTextWriter::write( dword offset, dword hash )
 {
@@ -58,12 +58,12 @@ void CTextWriter::write( dword offset, dword hash )
 
 	FILE *ft = fopen( filename, "wb" );
 	if ( ft == NULL )
-		throw "ÎŞ·¨´ò¿ªÒªĞ´ÈëµÄÎÄ±¾ÎÄ¼ş";
+		throw "æ— æ³•æ‰“å¼€è¦å†™å…¥çš„æ–‡æœ¬æ–‡ä»¶";
 
 	sprintf( filename, "%08x.tbl", offset );
 	FILE* fb=fopen(filename,"wb");
 	if(fb==NULL)
-		throw "ÎŞ·¨´ò¿ªÒªĞ´ÈëµÄ±íÎÄ¼ş";
+		throw "æ— æ³•æ‰“å¼€è¦å†™å…¥çš„è¡¨æ–‡ä»¶";
 
 	for(int i=0;i<msgTbl.size();i++)
 	{

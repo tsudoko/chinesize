@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  this solution support 2 versions of rugp.
  *
  *  version 1: rugp 6.10.09D
