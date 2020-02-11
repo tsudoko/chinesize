@@ -14,6 +14,7 @@
 #define hash_map unordered_map
 
 
+void	ReadOptimizedObs( CStream *s, vector<CLASS> *cache, const OBJECT *object );
 void	ReadRelicUnitedGameProject( CStream *s, vector<CLASS> *cache, const OBJECT *object );
 void	ReadBoxOcean( CStream *s, vector<CLASS> *cache, const OBJECT *object );
 void	ReadProcessOcean( CStream *s, vector<CLASS> *cache, const OBJECT *object );
@@ -414,7 +415,7 @@ void InitClassFuncTable()
 		{ "CRip008", ReadNull },
 		{ "CFrameImage", ReadNull },
 		{ "CLabel", ReadNull },
-		{ "COptimizedObs", ReadNull },
+		{ "COptimizedObs", ReadOptimizedObs },
 		{ "CCharVoiceOcean", ReadNull },
 		{ "CRmt", ReadNull },
 		{ "CBasicArray", ReadNull },
