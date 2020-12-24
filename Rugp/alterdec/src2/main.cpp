@@ -121,7 +121,7 @@ void Decode( const char *filename , dword firstOffset, OpenFileRoutine openf)
 		for ( int j=0; j<5; j++ )
 			cache.push_back( CLASS() );
 
-		if ( object.name != "CrelicUnitedGameProject" )
+		if ( object.name != "CrelicUnitedGameProject" && object.name != "COptimizedObs" )
 			fs.seek( 3 );
 
 		ReadObject( &fs, &cache, &object );
